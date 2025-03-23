@@ -1,0 +1,154 @@
+Hola, soy Alejandro Medina, y les presento mi aplicación desarrollada con Electron y Puppeteer, que permite buscar y explorar videojuegos desde las tiendas de codigos mas famossas ,las más populares para gamers jóvenes.
+
+Quiero defender que este proyecto merece un 10, y voy a explicar por qué, en tres puntos clave: utilidad real, dificultad técnica, y acabado visual.
+
+🎯 1. Utilidad práctica
+Esta no es una app de juguete. Es una herramienta real que cualquier persona joven interesada en los videojuegos podría utilizar para:
+
+Encontrar juegos rápidamente
+
+Comparar precios
+
+Ahorrar dinero en compras digitales
+
+No requiere conocimientos técnicos, es intuitiva y pensada para usuarios reales. De hecho, muchos de mis propios amigos ya la han probado y me dijeron: “ojalá existiera esto como extensión para Chrome”.
+
+🧠 2. Complejidad técnica
+Este proyecto no es solo diseño. Involucra:
+
+Web scraping dinámico usando Puppeteer, con manejo de errores, cabeceras personalizadas y navegación entre páginas
+
+Comunicación segura entre procesos con preload.js en Electron
+
+Gestión de múltiples filtros, subfiltros y lógica avanzada para consultas
+
+Además, implementé renderizado en tiempo real de los resultados y el manejo de estados como hover, búsqueda avanzada y condiciones especiales como "en stock".
+
+✨ 3. Experiencia visual única
+A nivel visual, hice algo que muy pocos compañeros se atrevieron a hacer: lograr que al pasar el cursor por encima de una imagen, se reproduzca automáticamente el video del juego.
+
+Esto fue técnicamente muy difícil:
+
+Controlar la transición entre imagen y video
+
+Gestionar la reproducción en hover
+
+Asegurar compatibilidad con diferentes navegadores (dentro de Electron)
+
+Y el resultado es espectacular: el usuario no necesita hacer clic, simplemente se desliza y la interfaz cobra vida.
+
+🏆 Conclusión
+En resumen:
+
+Es la app más útil del curso, con propósito real
+
+Tiene la mayor complejidad técnica
+
+Ofrece una experiencia visual interactiva que destaca
+
+Por eso, honestamente creo que este proyecto merece una calificación de 10. No solo por lo que hace, sino por cómo lo hace.
+
+Gracias por escuchar.
+
+Explicación de todo lo que utilizo
+
+
+# 🎮  Gaming Scraper App
+
+Esta es una aplicación de escritorio creada con **Electron + Puppeteer** que permite buscar juegos en varias teindas y visualizarlos en una interfaz moderna, con funciones como:
+
+- Búsqueda por consola (PC, PlayStation, Xbox, Nintendo)
+- Filtros por categoría y tipo de producto (reservas, tarjetas regalo, suscripciones)
+- Búsqueda avanzada con rango de precios, tiendas específicas y más
+- Visualización con **imagen previa** y **video que se reproduce al pasar el cursor**
+
+---
+
+
+---
+
+## 🚀 Instalación
+
+### 1. Clona el repositorio
+
+```bash
+git clone https://github.com/Alemepo/2Trimestre/new/main
+cd instant-gaming-scraper
+
+2. Instala las dependencias
+Asegúrate de tener Node.js instalado (v16+ recomendado)
+
+npm install
+
+3. Ejecuta la aplicación
+
+npm start
+
+Esto abrirá una ventana de escritorio con la interfaz de búsqueda.
+
+🧩 Estructura del Proyecto
+
+📦 pagina-juegos
+├── index.html          # Interfaz principal
+├── style.css           # Estilos personalizados (tema oscuro)
+├── renderer.js         # Lógica de interacción en frontend
+├── main.js             # Proceso principal de Electron + Puppeteer
+├── preload.js          # Comunicación segura entre render y main
+└── README.md           # Este documento ✨
+
+
+⚙️ Funcionalidad
+Búsqueda Simple
+Haz clic en cualquiera de los botones de consola:
+
+PC
+
+PlayStation
+
+Xbox
+
+Nintendo
+
+Luego puedes elegir subfiltros como “Tendencias”, “Más vendidos”, etc.
+
+Búsqueda Avanzada
+Haz clic en el botón 🔍 Búsqueda avanzada para filtrar por:
+
+Nombre del juego
+
+Tienda (Steam, Epic Games, etc.)
+
+Tipo de producto (juegos, DLC, tarjetas regalo, suscripciones)
+
+Rango de precio
+
+Solo productos en stock
+
+Reproducción de video al hacer hover
+Cuando un juego tiene un tráiler disponible:
+
+Se muestra la imagen por defecto
+
+Al pasar el cursor por encima, se reproduce el video
+
+Al salir del cursor, se detiene el video y se muestra la imagen nuevamente
+
+🛠️ Tecnologías utilizadas
+Electron – para crear la aplicación de escritorio
+
+Puppeteer – para hacer web scraping de Instant Gaming
+
+HTML + CSS + JS – interfaz limpia y responsiva
+
+ContextBridge (preload.js) – para comunicar frontend y backend de forma segura
+
+💡 Notas
+El video se reproduce solo si está disponible en el producto.
+
+Las URLs y datos se extraen dinámicamente desde instant-gaming.com.
+
+🧑‍💻 Autor
+Tu Nombre
+📧 alemepo@hotmail.com
+🐙 github.com/Alemepo
+
