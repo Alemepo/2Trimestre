@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scraping App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Búsqueda de Juegos</h1>
+
+  <!-- Botones de consola -->
+  <div id="filtros">
+    <button id="pc">PC</button>
+    <button id="playstation">PlayStation</button>
+    <button id="xbox">Xbox</button>
+    <button id="nintendo">Nintendo</button>
+    <!-- Botón para abrir búsqueda avanzada -->
+    <button id="search-icon">🔍 Búsqueda avanzada</button>
+  </div>
+
+  <!-- Contenedor de Búsqueda Avanzada -->
+  <div id="search-container">
+    <h2>Búsqueda Avanzada</h2>
+    <div class="advanced-filters">
+      <!-- FILA 1: Nombre del juego, Tienda, Tipo de juego -->
+      <div class="filter-row">
+        <label for="advanced-query">Nombre del juego:</label>
+        <input type="text" id="advanced-query" placeholder="Ej: Minecraft" />
+
+        <label for="search-type">Tienda:</label>
+        <select id="search-type">
+          <option value="">Todas</option>
+          <option value="battle.net">Battle.net</option>
+          <option value="epic games">Epic Games</option>
+          <option value="gog.com">GOG.com</option>
+          <option value="instant gaming">Instant Gaming</option>
+          <option value="microsoft store">Microsoft Store</option>
+          <option value="ncsoft">Ncsoft</option>
+          <option value="nintendo eshop">Nintendo eShop</option>
+          <option value="ea app">EA App</option>
+          <option value="playstation store">PlayStation Store</option>
+          <option value="rockstar">Rockstar</option>
+          <option value="steam">Steam</option>
+          <option value="ubisoft connect">Ubisoft Connect</option>
+        </select>
+
+        <label for="game-type">Tipo de juego:</label>
+        <select id="game-type">
+          <option value="all" selected>Juegos y DLC</option>
+          <option value="dlc">Sólo DLC</option>
+          <option value="games">Sólo juegos</option>
+          <option value="preorder">Reservas</option>
+          <option value="prepaid">Tarjetas prepago</option>
+          <option value="subscription">Suscripciones</option>
+          <option value="giftcard">Tarjetas regalo & Suscripciones</option>
+        </select>
+      </div>
+
+      <!-- FILA 2: Precio, en stock, botón buscar/cerrar -->
+      <div class="filter-row">
+        <label>Entre:</label>
+        <input type="number" id="min-price" value="10" min="0" />
+        <span>y</span>
+        <input type="number" id="max-price" value="200" min="0" />
+        <span>€</span>
+
+        <label>
+          <input type="checkbox" id="instock" checked />
+          En stock
+        </label>
+
+        <button id="advanced-search-btn">Buscar</button>
+        <button id="close-search">Cerrar</button>
+      </div>
+    </div>
+    <!-- contenedor de sugerencias (si implementas autocompletado) -->
+    <div id="search-suggestions"></div>
+  </div>
+
+  <div id="subfiltros-consola"></div>
+  <div id="subfiltros-ordenacion"></div>
+  <div id="results"></div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
